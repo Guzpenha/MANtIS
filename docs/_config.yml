@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
 title: MANtIS
 description: a multi-domain information seeking dialogues dataset
+logo_lambda: img/lambda-lab.png
+logo_tudelft: img/tu-delft.jpg

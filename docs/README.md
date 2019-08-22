@@ -12,15 +12,15 @@ The conversations of the dataset are multi-turn, multi-intent, containing clarif
 ## MANtIS - complete JSON
 The dataset has over 80,000 dialogues between information seekers and information providers from the following domains of Stack Exchange: apple, askubuntu, dba, diy, electronics, english, gaming, gis, physics, scifi, security, stats, travel and worldbuilding. In order to ensure that each conversation in our dataset follows our set of criteria, we have devised a list of six conditions that must hold for each conversation:
 
-1. The entire conversation takes place between _exactly_ two users (the asker who starts off the conversation and the provider who attempts to fulfill the information need).
-2. The conversation consists of _at least_ 2 turns per user.
-3. At least one of the answerer’s utterances contains a hyperlink (providing grounding).
-4. The  conversation has not been marked as _Spam_ or _Offensive_.
-5. The  conversation has not been edited or marked as deprecated.
-6. If the final turn in the conversation belongs to the asker, it contains _positive feedback_ (identified using the
+1. The entire conversation takes place between two users (the information _seeker_ who starts off the conversation and the information _provider_). Conversations with three or more users are not considered.
+2. The conversation consists of at least 2 utterances per user.
+3. At least one of the information provider's utterances contains a hyperlink (providing grounding).
+4. The conversation has not been marked as _Spam_ or _Offensive_.
+5. The conversation has not been edited or marked as deprecated on the Stack Exchange portal. 
+6. If the final turn in the conversation belongs to the information seeker, it contains _positive feedback_ (identified using the
 [vader score](https://www.nltk.org/_modules/nltk/sentiment/vader.html)).
 
-The processed JSON dataset is available for download [here](https://drive.google.com/file/d/1cWEbTC4klLQDLej--IG2OAZIT4AX549A/view?usp=sharing), having following format:
+The processed JSON dataset is available for download [here](https://drive.google.com/file/d/1cWEbTC4klLQDLej--IG2OAZIT4AX549A/view?usp=sharing), with the following format:
 
 * __dialog_id__: a unique id for a dialog - ids are consecutive
 * __category__: domain to which the dialogue belongs
@@ -39,7 +39,7 @@ The processed JSON dataset is available for download [here](https://drive.google
 
 ## MANtIS - intent labeled JSON
 
-To further enrich the dataset, we have employed 2 specialist annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used to label all utterances :
+To further enrich the dataset, we have employed 2 specialist annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
 
 | Intent	|	Description	|	Example snippet |
 |-----------|---------------|-------------------|
@@ -73,6 +73,19 @@ Afterwards, for each such context, we generate negative sampled instances in whi
 
 The mantis_10 response ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/1nf_JRR7zIcCLrzvL_vRsuzBxDcD_3g6N/view?usp=sharing)
 The mantis_50 response ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/11_Um52HzjC41M9S-xSAX6HZP25bmi2oq/view?usp=sharing)
+
+## Questions and citation
+
+You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the paper introducing the dataset:
+
+```
+@article{mantis,
+  title={Introducing MANtIS: a novel Multi-Domain Information Seeking Dialogues Dataset},
+  author={Gustavo Penha, Alexandru Balan, Claudia Hauff},
+  journal={arXiv preprint arXiv:},
+  year={2019}
+}
+```
 
 ## Using the code 
 
