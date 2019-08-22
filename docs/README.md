@@ -1,16 +1,17 @@
 # MANtIS - a multi-domain information seeking dialogues dataset
 
 ## Introduction
-MANtIS is a multi-domain dialogue dataset contatining information-seeking interactions from the community  question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 multi-turn dialogues. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
+MANtIS is a multi-domain dialogue dataset containing information-seeking interactions from the community  question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 multi-turn dialogues. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
 
 <p align="center">
 <img src="img/MANtIS_DatasetExamples.png">
 </p>
 
-The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains.
+The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Refer to the [paper](https://arxiv.org/abs/){:target="_blank"} for a more detailed comparison against other available datasets.
+
 
 ## MANtIS - complete JSON
-The dataset has over 80,000 dialogues between information seekers and information providers from the following domains of Stack Exchange: apple, askubuntu, dba, diy, electronics, english, gaming, gis, physics, scifi, security, stats, travel and worldbuilding. In order to ensure that each conversation in our dataset follows our set of criteria, we have devised a list of six conditions that must hold for each conversation:
+The dataset has over 80,000 dialogues between information seekers and information providers from the following domains of Stack Exchange: apple, askubuntu, dba, diy, electronics, english, gaming, gis, physics, scifi, security, stats, travel and worldbuilding. In order to ensure that each conversation in our dataset follows our set of criteria, we devised a list of six conditions that must hold for each conversation:
 
 1. The entire conversation takes place between two users (the information _seeker_ who starts off the conversation and the information _provider_). Conversations with three or more users are not considered.
 2. The conversation consists of at least 2 utterances per user.
@@ -39,7 +40,7 @@ The processed JSON dataset is available for download [here](https://drive.google
 
 ## MANtIS - intent labeled JSON
 
-To further enrich the dataset, we have employed 2 specialist annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
+To further enrich the dataset, we employed 2 specialist annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
 
 | Intent	|	Description	|	Example snippet |
 |-----------|---------------|-------------------|
@@ -76,7 +77,7 @@ The mantis_50 response ranking dataset in `.tsv` format is available for downloa
 
 ## Questions and citation
 
-You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the paper introducing the dataset:
+You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
 
 ```
 @article{mantis,
@@ -89,7 +90,7 @@ You can contact us via email to authors (available on the [paper](https://arxiv.
 
 ## Using the code 
 
-Considering that Stack Exchange has more than 170 domains and we processed 14 of thoose, we also provide the source code for extracting the dataset for any of the existing domains.
+Considering that Stack Exchange has more than 170 domains and we processed 14 of those, we also provide the source code for extracting the dataset for any of the existing domains.
 
 #### Installing dependencies
 In order to install all the required external dependencies, please run `pip install -r requirements.txt` in the root folder of the project. 
