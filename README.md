@@ -4,7 +4,7 @@
 MANtIS is a multi-domain dialogue dataset contatining information-seeking interactions from the community  question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and intent prediction. We provide manually annotated intent labels for more than 1300 multi-turn dialogues. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
 
 <p align="center">
-<img src="img/MANtIS_DatasetExamples.png">
+<img src="docs/img/MANtIS_DatasetExamples.png">
 </p>
 
 The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains.
@@ -55,7 +55,7 @@ To further enrich the dataset, we have employed 2 specialist annotators to mark 
 The distribution of labels across all annotated conversations is shown in the figure below, with Original Question, Potential Answer and Further Details being the most frequent labels. 21% of utterances were annotated with more than one label, indicating the multi-intent nature of our dataset.
 
 <p align="center">
-<img width="75%" height="75%" src="img/barplot_intents.png">
+<img width="75%" height="75%" src="docs/img/barplot_intents.png">
 </p>
 
 The JSON dataset with the labeled intents is available for download [here](https://drive.google.com/file/d/1JI9VAuHllyZxr7XhTYLhx7iI2EVd3-a4/view?usp=sharing)
