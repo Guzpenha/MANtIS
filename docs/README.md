@@ -40,7 +40,7 @@ The processed JSON dataset is available for download [here](https://drive.google
 
 ## MANtIS - intent labeled JSON
 
-To further enrich the dataset, we employed 2 specialist annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
+To further enrich the dataset, we employed two expert annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
 
 | Intent	|	Description	|	Example snippet |
 |-----------|---------------|-------------------|
