@@ -7,7 +7,7 @@ MANtIS is a multi-domain dialogue dataset containing more than 80000 information
 <img src="docs/img/MANtIS_DatasetExamples.png">
 </p>
 
-The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/){:target="_blank"} for a more detailed comparison against other available datasets. 
+The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/) for a more detailed comparison against other available datasets. 
 
 
 ## MANtIS - complete JSON
@@ -77,7 +77,7 @@ The mantis_50 response ranking dataset in `.tsv` format is available for downloa
 
 ## Questions and citation
 
-You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
+You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/)) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
 
 ```
 @article{mantis,
