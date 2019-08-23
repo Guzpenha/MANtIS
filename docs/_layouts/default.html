@@ -22,11 +22,6 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-
-<!--         {% if site.github.is_project_page %}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
-        {% endif %} -->
-
         <ul class="downloads">
           <li><a href="https://drive.google.com/file/d/1cWEbTC4klLQDLej--IG2OAZIT4AX549A/view" target="_blank">Download<strong>Complete</strong></a></li>
           <li><a href="https://drive.google.com/file/d/1JI9VAuHllyZxr7XhTYLhx7iI2EVd3-a4/view" target="_blank">Download <strong>Intent</strong></a></li>
@@ -45,6 +40,9 @@
         <a href="https://www.tudelft.nl/en/" target="_blank"><img src="{{site.logo_tudelft | relative_url}}" alt="Logo" width="25%" height="25%" float:left;/> </a>
         {% if site.github.is_project_page %}
         <p>This project was developd by <a href="https://github.com/alexanderblnf">Alexandru</a> during his M.Sc. thesis under <a href="{{ site.github.owner_url }}">Gustavo</a>'s supervision</p>
+        {% endif %}
+        {% if site.github.is_project_page %}
+        <p class="view"><a href="{{ site.github.repository_url }}"><small> View the Project on GitHub: {{ site.github.repository_nwo }}</small></a></p>
         {% endif %}
         <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
