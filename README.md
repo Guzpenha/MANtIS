@@ -4,10 +4,10 @@
 MANtIS is a multi-domain dialogue dataset containing more than 80000 information-seeking conversations from the community question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 dialogues, resulting in a total of 6701 labeled utterances. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
 
 <p align="center">
-<img src="docs/img/MANtIS_DatasetExamples.png">
+<img src="img/MANtIS_DatasetExamples.png">
 </p>
 
-The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/) for a more detailed comparison against other available datasets. 
+The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/){:target="_blank"} for a more detailed comparison against other available datasets. 
 
 
 ## MANtIS - complete JSON
@@ -42,24 +42,36 @@ The processed JSON dataset is available for download [here](https://drive.google
 
 To further enrich the dataset, we employed two expert annotators to mark a subset of 1356 dialogues (Krippendorff's agreement of 0.71) from the dataset with intent labels for each utterance. The following schema was used:
 
-| Intent    |   Description |   Example snippet |
+| Intent  | Description | Example snippet |
 |-----------|---------------|-------------------|
-| Further Details   |   A user (either asking or answering user) provides more details. |   Hi. Sorry for taking so long to reply. The information you need is ...|
-| Follow Up Question    |   Asking user asks one or more follow up questions about relevant issues. |   Thanks. I really have one more simple question -- if I ...|
-| Information Request   |   A user (either asking or answering user) is asking for clarifications or further information.   |   What is the make and model of the computer? Have you tried installing ... Your advice is not detailed enough. I'm not sure what you mean by ... |
-| Potential Answer  |   A potential solution, provided by the answering user.   |   Hi. To change the PIN on your phone, you may follow the steps below:..|
-| Positive Feedback |   Asking user provides positive feedback about the offered solution.  |   Hi. That was exactly what I needed. Thanks!|
-| Negative Feedback |   Asking user provides negative feedback about the offered solution.  |   Thanks for you help! However, the fix did not work..|
-| Greetings / Gratitude |   A user (asking or answering user) offers a greeting or expresses gratitude. |   Thank you for all the responses!|
-| Other |   Anything that does not fit into the above categories.   |   :) :) :) . *shrug*|
+| Further Details | A user (either asking or answering user) provides more details. | Hi. Sorry for taking so long to reply. The information you need is ...|
+| Follow Up Question  | Asking user asks one or more follow up questions about relevant issues. | Thanks. I really have one more simple question -- if I ...|
+| Information Request | A user (either asking or answering user) is asking for clarifications or further information. | What is the make and model of the computer? Have you tried installing ... Your advice is not detailed enough. I'm not sure what you mean by ... |
+| Potential Answer  | A potential solution, provided by the answering user. | Hi. To change the PIN on your phone, you may follow the steps below:..|
+| Positive Feedback | Asking user provides positive feedback about the offered solution.  | Hi. That was exactly what I needed. Thanks!|
+| Negative Feedback | Asking user provides negative feedback about the offered solution.  | Thanks for you help! However, the fix did not work..|
+| Greetings / Gratitude | A user (asking or answering user) offers a greeting or expresses gratitude. | Thank you for all the responses!|
+| Other | Anything that does not fit into the above categories. | :) :) :) . *shrug*|
 
 The distribution of labels across all annotated conversations is shown in the figure below, with Original Question, Potential Answer and Further Details being the most frequent labels. 21% of utterances were annotated with more than one label, indicating the multi-intent nature of our dataset.
 
 <p align="center">
-<img width="75%" height="75%" src="docs/img/barplot_intents.png">
+<img width="75%" height="75%" src="img/barplot_intents.png">
 </p>
 
 The JSON dataset with the labeled intents is available for download [here](https://drive.google.com/file/d/1JI9VAuHllyZxr7XhTYLhx7iI2EVd3-a4/view?usp=sharing)
+
+## Mantis - grounding documents JSON
+
+For each URL mentioned in the agent responses, we have used a crawler to download the document associated with the URL. We do not attempt to download media files (images, PDFs, videos etc.), but only HTML pages, as the crawler can only extract documents for those. 
+
+To crawl the URLs, one must first generate a dataset JSON with an attribute `urls` that stores all the URLs mentioned in a specific utterance. To do this, first run `python utils/dataset_url_enricher --mode extract_url --dataset {dataset_to_enrich.json}`. This will generate a new file containing the URLs in a separate attribute
+
+To start the crawling process, run `python utils/dataset_url_enricher --mode crawl_content --dataset {enriched_dataset.json}` where `enriched_dataset.json` is the dataset obtained at the previous step. There is also a `num_cpus` option available to specify how many CPUs to use for parallel crawling.
+
+The JSON file containing the mappings between URLs and actual content of the documents can be downloaded from [here]
+(https://drive.google.com/file/d/1Xk4oUFnnk3Nj9LRYaUWkzOPvfwB5Euzs/view?usp=sharing)
+
 
 ## MANtIS - response-ranking format
 
@@ -75,9 +87,16 @@ Afterwards, for each such context, we generate negative sampled instances in whi
 The mantis_10 response ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/1nf_JRR7zIcCLrzvL_vRsuzBxDcD_3g6N/view?usp=sharing)
 The mantis_50 response ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/11_Um52HzjC41M9S-xSAX6HZP25bmi2oq/view?usp=sharing)
 
+## MANtIS - document ranking format
+
+The document ranking dataset is identical in format with the response ranking one. The difference is that the candidate response is replaced with the candidate document contained in the response. If there are multiple associated documents, multiple rows are created.
+
+The mantis_10 document ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/1aLEJnlDKggSVtuXNg1llyZgY0PD6u78n/view?usp=sharing)
+The mantis_50 document ranking dataset in `.tsv` format is available for download [here](https://drive.google.com/file/d/1mmlZaA57O3FD19hDMkK83e_xAs5mOKVG/view?usp=sharing)
+
 ## Questions and citation
 
-You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/)) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
+You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
 
 ```
 @article{mantis,
@@ -151,3 +170,6 @@ added for each true agent response.
 The output is stored in `stackexchange_dump/data_{allocation}.tsv`. A lookup `.txt` file is generated
 for each file that contains for each row the ID of the original conversation in the source JSON.
 
+#### Building the document ranking training datasets
+
+The same script that creates the response ranking training dataset is used to generate the document ranking. The difference relies in the passed arguments. In this case, the command is `python run.py web_training [easy]`. The output is stored in `stackexchange_dump/mantis_web/data_{allocation}_web.tsv`. A lookup `.txt` file is also generated.
