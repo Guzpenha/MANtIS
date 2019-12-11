@@ -1,7 +1,7 @@
 # MANtIS - a multi-domain information seeking dialogues dataset
 
 ## Introduction
-MANtIS is a multi-domain dialogue dataset containing more than 80000 information-seeking conversations from the community question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 dialogues, resulting in a total of 6701 labeled utterances. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
+MANtIS is a multi-domain dialogue dataset containing more than 80000 __information-seeking conversations__ from the community question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 dialogues, resulting in a total of 6701 labeled utterances. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
 
 <p align="center">
 <img width="70%" height="70%"  src="docs/img/MANtIS_DatasetExamples.png">
@@ -57,7 +57,7 @@ The distribution of labels across all annotated conversations is shown in the fi
 
 <p align="center">
 <img width="75%" height="75%" src="docs/img/barplot_intents.png">
-</p>
+</p>  
 
 The JSON dataset with the labeled intents is available for download [here](https://drive.google.com/file/d/1JI9VAuHllyZxr7XhTYLhx7iI2EVd3-a4/view?usp=sharing)
 
@@ -96,16 +96,21 @@ The mantis_50 document ranking dataset in `.tsv` format is available for downloa
 
 ## Questions and citation
 
-You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/){:target="_blank"}) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
+You can contact us via email to authors (available on the [paper](https://arxiv.org/abs/1912.04639) or by creating issues in the github project. If you use MANtIS in your work please include a citation to the following paper:
 
 ```
-@article{mantis,
-  title={Introducing MANtIS: a novel Multi-Domain Information Seeking Dialogues Dataset},
-  author={Gustavo Penha, Alexandru Balan, Claudia Hauff},
-  journal={arXiv preprint arXiv:},
-  year={2019}
+@misc{penha2019mantis,
+    title={Introducing MANtIS: a novel Multi-Domain Information Seeking Dialogues Dataset},
+    author={Gustavo Penha, Alexandru Balan and Claudia Hauff},
+    year={2019},
+    eprint={1912.04639},
+    archivePrefix={arXiv},
+    primaryClass={cs.CL}
 }
 ```
+
+For a in-depth description of the dataset refer to Alex's [thesis](https://repository.tudelft.nl/islandora/object/uuid%3A0ab2d1e4-385e-43cf-9883-cfc6c2f3f19c?collection=education){:target="_blank"}. In his thesis you can also find a study on the effects of multi-task learning for all three available tasks (conversation response ranking, grounding document ranking and intent prediction) using a deep matching network.
+
 
 ## Using the code 
 
