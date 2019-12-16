@@ -7,7 +7,7 @@ MANtIS is a multi-domain dialogue dataset containing more than 80000 __informati
 <img src="img/MANtIS_DatasetExamples.png">
 </p>
 
-The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/){:target="_blank"} for a more detailed comparison against other available datasets. 
+The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/1912.04639){:target="_blank"} for a more detailed comparison against other available datasets.
 
 
 ## MANtIS - complete JSON

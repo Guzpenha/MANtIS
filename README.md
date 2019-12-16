@@ -7,7 +7,7 @@ MANtIS is a multi-domain dialogue dataset containing more than 80000 __informati
 <img width="70%" height="70%"  src="docs/img/MANtIS_DatasetExamples.png">
 </p>
 
-The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/){:target="_blank"} for a more detailed comparison against other available datasets. 
+The conversations of the dataset are multi-turn, multi-intent, containing clarification questions and complex information needs, grounded in web pages and extracted from different domains. Please read the [paper](https://arxiv.org/abs/1912.04639) for a more detailed comparison against other available datasets. 
 
 
 ## MANtIS - complete JSON
@@ -109,7 +109,7 @@ You can contact us via email to authors (available on the [paper](https://arxiv.
 }
 ```
 
-For a in-depth description of the dataset refer to Alex's [thesis](https://repository.tudelft.nl/islandora/object/uuid%3A0ab2d1e4-385e-43cf-9883-cfc6c2f3f19c?collection=education){:target="_blank"}. In his thesis you can also find a study on the effects of multi-task learning for all three available tasks (conversation response ranking, grounding document ranking and intent prediction) using a deep matching network.
+For a in-depth description of the dataset refer to Alex's [thesis](https://repository.tudelft.nl/islandora/object/uuid%3A0ab2d1e4-385e-43cf-9883-cfc6c2f3f19c?collection=education). In his thesis you can also find a study on the effects of multi-task learning for all three available tasks (conversation response ranking, grounding document ranking and intent prediction) using a deep matching network.
 
 
 ## Using the code 
