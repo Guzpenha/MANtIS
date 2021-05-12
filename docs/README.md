@@ -1,6 +1,9 @@
 # MANtIS - a multi-domain information seeking dialogues dataset
 
 ## Introduction
+
+**_There is a problem with the urls for the dataset with negative candidates. I am working on a fix for this, meanwhile it is possible to access the dataset without negative samples here: https://github.com/Guzpenha/transformer_rankers. The library has code to download the MANtIS data and also sample negatives, e.g. using BM25, see how to do it here: https://github.com/Guzpenha/transformer_rankers/blob/master/transformer_rankers/examples/negative_sampling.py._**
+
 MANtIS is a multi-domain dialogue dataset containing more than 80000 __information-seeking conversations__ from the community question-answering portal [Stack Exchange](https://stackexchange.com). Unlike previous information-seeking dialogue datasets that focus on only one domain, MANtIS has __diverse__ conversations from 14 different sites, such as *physics*, *travel* and *worldbuilding*. Additionaly, all dialogues have a url, providing __grounding__ to the conversations. It can be used for the following tasks: conversation response ranking/generation and user intent prediction. We provide manually annotated user intent labels for more than 1300 dialogues, resulting in a total of 6701 labeled utterances. See an example of the annotations on the right side of each utterance of a conversation extracted from the *gaming* domain:
 
 <p align="center">
